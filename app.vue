@@ -5,7 +5,7 @@ const fetchAPI = async () => {
   const result = await $fetch('/api/email', {
     method: 'post',
     body: JSON.stringify({
-      userFirstName: 'Jane'
+      username: 'Jane Smith'
     })
   });
   console.log(result);
