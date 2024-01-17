@@ -1,7 +1,7 @@
 import { useCompiler } from '#vue-email';
 
 export default defineEventHandler(async () => {
-  const { username } = getQuery(event)
+  const { username } = await readBody(event)
 
   setTimeout(async () => {
     try {
@@ -19,7 +19,6 @@ export default defineEventHandler(async () => {
   
       return template.html;
     } catch (error) {
-      // console.log(error);
       throw createError({
         statusCode: 500,
         statusMessage: 'Internal error',
