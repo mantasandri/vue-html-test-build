@@ -16,26 +16,28 @@ export default defineEventHandler(async () => {
 
   const { username } = await readBody(event)
 
-  try {
-    const template = await useCompiler('test.vue', {
-      props: {
-        username,
-      },
-    });
-s
-    if (!template) {
+  setTimeout(() => {
+    try {
+      const template = await useCompiler('test.vue', {
+        props: {
+          username,
+        },
+      });
+  s
+      if (!template) {
+        throw createError({
+          statusCode: 404,
+          statusMessage: 'Not Found',
+        });
+      }
+  
+      return template.html;
+    } catch (error) {
+      console.log(error);
       throw createError({
-        statusCode: 404,
-        statusMessage: 'Not Found',
+        statusCode: 500,
+        statusMessage: 'Internal error',
       });
     }
-
-    return template.html;
-  } catch (error) {
-    console.log(error);
-    throw createError({
-      statusCode: 500,
-      statusMessage: 'Internal error',
-    });
-  }
+  }, 5000)
 });

@@ -13,6 +13,7 @@ const fetchAPI = async () => {
 };
 
 onMounted(async () => {
+  console.log('mounted');
   const result = await $fetch('/api/email');
   console.log(result);
   email.value = result;
