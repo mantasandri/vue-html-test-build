@@ -16,7 +16,6 @@ const apiRoute = ref('/api/email?username=JaneSmith')
 const fetchAPI = async () => {
   console.log('fetch api route: ', apiRoute.value);
   const result = await useFetch(apiRoute.value);
-//   console.log(result);
   email.value = result;
 };
 
