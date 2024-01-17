@@ -2,7 +2,9 @@
 const email = ref('');
 
 const fetchAPI = async () => {
-  const result = await useFetch('/api/email?username=JaneSmith');
+  const apiRoute = '/api/email?username=JaneSmith'
+  console.log(apiRoute);
+  const result = await useFetch(apiRoute);
   console.log(result);
   email.value = result;
 };
