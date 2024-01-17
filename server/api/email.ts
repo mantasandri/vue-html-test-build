@@ -16,7 +16,7 @@ export default defineEventHandler(async () => {
 
   const { username } = await readBody(event)
 
-  setTimeout(() => {
+  setTimeout(async () => {
     try {
       const template = await useCompiler('test.vue', {
         props: {
