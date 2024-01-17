@@ -14,15 +14,15 @@ export default defineEventHandler(async () => {
     return 'OK'
   }
 
-  const { userFirstName } = await readBody(event)
+  const { username } = await readBody(event)
 
   try {
     const template = await useCompiler('test.vue', {
       props: {
-        userFirstName,
+        username,
       },
     });
-
+s
     if (!template) {
       throw createError({
         statusCode: 404,
