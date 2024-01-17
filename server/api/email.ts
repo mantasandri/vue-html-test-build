@@ -20,7 +20,7 @@ export default defineEventHandler(async () => {
     try {
       const template = await useCompiler('test.vue', {
         props: {
-          username,
+          username: username,
         },
       });
   s
