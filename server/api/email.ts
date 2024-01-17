@@ -2,10 +2,16 @@ import { useCompiler } from '#vue-email';
 
 export default defineEventHandler(async (event) => {
   const { username } = await readBody(event)
-  
+
   try {
+    console.log('before timeout')
+    
     setTimeout(() => {
+      console.log('timeout finished')
     }, 1000)
+
+    console.log('after timeout')
+
     const template = await useCompiler('test.vue', {
       props: {
         username,
