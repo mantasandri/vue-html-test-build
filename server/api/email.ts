@@ -3,7 +3,7 @@ import { useCompiler } from '#vue-email';
 export default defineEventHandler(async (event) => {
   const { username } = await readBody(event)
 
-  setTimeout(async () => {
+  // setTimeout(async () => {
     try {
       const template = await useCompiler('test.vue', {
         props: {
@@ -27,5 +27,5 @@ export default defineEventHandler(async (event) => {
         statusMessage: 'Internal error',
       });
     }
-  }, 5000)
+  // }, 5000)
 });
