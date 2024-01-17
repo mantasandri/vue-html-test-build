@@ -14,7 +14,9 @@ export default defineEventHandler(async () => {
     return 'OK'
   }
 
-  const { username } = await readBody(event)
+  const { username } = getQuery(event)
+
+  console.log(username);
 
   setTimeout(async () => {
     try {

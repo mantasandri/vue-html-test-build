@@ -2,12 +2,7 @@
 const email = ref('');
 
 const fetchAPI = async () => {
-  const result = await useFetch('/api/email', {
-    method: 'post',
-    body: JSON.stringify({
-      username: 'Jane Smith'
-    })
-  });
+  const result = await useFetch('/api/email?username="Jane Smith"');
   console.log(result);
   email.value = result;
 };
