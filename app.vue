@@ -2,17 +2,10 @@
 const email = ref('');
 
 const fetchAPI = async () => {
-  const result = await useFetch('/api/email?username="Jane Smith"');
+  const result = await useFetch('/api/email?username=JaneSmith');
   console.log(result);
   email.value = result;
 };
-
-onMounted(async () => {
-  console.log('mounted');
-  const result = await $fetch('/api/email');
-  console.log(result);
-  email.value = result;
-})
 </script>
 
 <template>
