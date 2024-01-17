@@ -16,16 +16,13 @@ export default defineEventHandler(async () => {
 
   const { username } = getQuery(event)
 
-  console.log(username);
-
   setTimeout(async () => {
     try {
       const template = await useCompiler('test.vue', {
         props: {
-          username: username,
+          username,
         },
       });
-  s
       if (!template) {
         throw createError({
           statusCode: 404,
