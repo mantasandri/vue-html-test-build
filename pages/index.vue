@@ -21,8 +21,4 @@ const fetchAPI = async () => {
   });
   email.value = result;
 };
-
-onMounted(() => {
-    console.log('apiRoute: ', apiRoute.value)
-})
 </script>

@@ -10,6 +10,9 @@ export default defineEventHandler(async (event) => {
           username,
         },
       });
+
+      console.log(template)
+      
       if (!template) {
         throw createError({
           statusCode: 404,
