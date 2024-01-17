@@ -1,6 +1,6 @@
 import { useCompiler } from '#vue-email';
 
-export default defineEventHandler(async () => {
+export default defineEventHandler(async (event) => {
   const { username } = await readBody(event)
 
   setTimeout(async () => {
